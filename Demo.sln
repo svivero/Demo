@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B5F62062
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{23CED35F-FB3E-46AA-AAC1-16F42A2ACDEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.EntityFramework", "Demo.EntityFramework\Demo.EntityFramework.csproj", "{B7A77B0A-B337-4683-B321-FA528D679BDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{BC877246-6BD9-4FF1-BF9E-573BDAA62741}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC877246-6BD9-4FF1-BF9E-573BDAA62741}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC877246-6BD9-4FF1-BF9E-573BDAA62741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7A77B0A-B337-4683-B321-FA528D679BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A77B0A-B337-4683-B321-FA528D679BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A77B0A-B337-4683-B321-FA528D679BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A77B0A-B337-4683-B321-FA528D679BDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
