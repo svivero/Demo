@@ -8,7 +8,7 @@ namespace Demo.ServiceStack.Tests
     [TestClass]
     public class HelloTests
     {
-        private JsonServiceClient client = new JsonServiceClient("http://localhost:64943/");
+        private JsonServiceClient client = Client.Instance();
 
         [TestMethod]
         public void ServiceStack_GetHelloResponse()
