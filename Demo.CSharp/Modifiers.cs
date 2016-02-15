@@ -63,7 +63,7 @@ namespace Demo.CSharp
     }
 
 
-    // default is public
+    // default is internal
     interface Interface
     {
         // must be implemented as public

@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{23CED35F-FB3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.EntityFramework", "Demo.EntityFramework\Demo.EntityFramework.csproj", "{B7A77B0A-B337-4683-B321-FA528D679BDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Javascript", "Demo.Javascript\Demo.Javascript.csproj", "{3AA36CBF-DED8-456C-8BED-9512266E26C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{B7A77B0A-B337-4683-B321-FA528D679BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7A77B0A-B337-4683-B321-FA528D679BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7A77B0A-B337-4683-B321-FA528D679BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AA36CBF-DED8-456C-8BED-9512266E26C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA36CBF-DED8-456C-8BED-9512266E26C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA36CBF-DED8-456C-8BED-9512266E26C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA36CBF-DED8-456C-8BED-9512266E26C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +84,6 @@ Global
 		{9D15FC46-866A-432F-BFC3-2437B01EFB14} = {23CED35F-FB3E-46AA-AAC1-16F42A2ACDEC}
 		{D1905730-8F6A-4663-A92A-563A931CD6E9} = {B5F62062-2D07-4EFF-AF81-7C336A08D71C}
 		{BC877246-6BD9-4FF1-BF9E-573BDAA62741} = {B5F62062-2D07-4EFF-AF81-7C336A08D71C}
+		{3AA36CBF-DED8-456C-8BED-9512266E26C6} = {23CED35F-FB3E-46AA-AAC1-16F42A2ACDEC}
 	EndGlobalSection
 EndGlobal
