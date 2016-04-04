@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example60-production</title>
+  
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  
+</head>
+<body ng-app="bindExample">
+  <script>
+  angular.module('bindExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.name = 'Whirled';
+	  
+  $scope.checkBoxItems = [{'Text':'apple', 'Value':0}, {'Text':'undefined val'}, {'Text':'orange', 'Value':1}];
+
+    }]);
+</script>
+<div ng-controller="ExampleController">
+  Enter name: <input type="text" ng-model="name"><br>
+	<label ng-repeat="item in checkBoxItems | filter:{ Value: '!undefined' }">
+		{{item.Text}},{{item.Value}}
+	</label>
+</div>
+</body>
+</html>

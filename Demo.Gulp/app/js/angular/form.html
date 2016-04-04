@@ -1,0 +1,184 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example60-production</title>
+  
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  
+</head>
+<body ng-app="example">
+  <script>
+  app = angular.module('example', []);
+    app.controller('childrenController', ['$scope', '$rootScope', 'passengers', function($scope, $rootScope, passengers) {
+	
+		$scope.statuses = [ {ChildCategory: '1', Status:'Yes'}, {ChildCategory: '2', Status:'No'} ];
+		
+		$scope.submitChildrenForm = function(){
+			
+			var deepCopy = angular.copy($scope.dateOfBirthList);
+			passengers.setChildren(deepCopy);
+			
+			$rootScope.$broadcast('children:changed');			
+		}
+		
+		$scope.cancel = function(){
+			console.log('cancel');
+		}		
+		
+		$scope.addDateOfBirth = function(day, month, year) {
+			console.log('add date');
+			$scope.dateOfBirthList.push({ DateOfBirthDay: day, DateOfBirthMonth:month, DateOfBirthYear: year });
+		}
+		
+		$scope.removeDateOfBirth = function(dob) {
+			console.log('remove date');
+			var index = $scope.dateOfBirthList.indexOf(dob);
+			$scope.dateOfBirthList.splice(index, 1);
+		}		
+		
+		$scope.dateOfBirthList = [ { DateOfBirthDay: 1, DateOfBirthMonth: 2, DateOfBirthYear: 2000 }  ];
+    }]);
+	app.controller('birthdayController', ['$scope', function ($scope) {
+
+		var numberOfYears = (new Date()).getYear() + 1;
+		var years = $.map($(Array(numberOfYears)), function (val, i) { return i + 1900; });
+		var months = $.map($(Array(12)), function (val, i) { return i + 1; });
+		var days = $.map($(Array(31)), function (val, i) { return i + 1; });
+
+		var isLeapYear = function () {
+			var year = $scope.request.DateOfBirthYear || 0;
+			return ((year % 400 === 0 || year % 100 !== 0) && (year % 4 === 0)) ? 1 : 0;
+		}
+
+		var getNumberOfDaysInMonth = function () {
+			var selectedMonth = $scope.request.DateOfBirthMonth || 0;
+			return 31 - ((selectedMonth === 2) ? (3 - isLeapYear()) : ((selectedMonth - 1) % 7 % 2));
+		}
+
+		$scope.UpdateNumberOfDays = function () {
+			//console.info('Number of days: ' + $scope.NumberOfDays);
+			$scope.NumberOfDays = getNumberOfDaysInMonth();
+		}
+
+		$scope.NumberOfDays = 31;
+		$scope.Years = years;
+		$scope.Days = days;
+		$scope.Months = months;
+	}]);	
+	app.controller('roomTypesController', ['$scope', 'passengers', function ($scope, passengers) {
+		
+		
+		$scope.init = function() {
+			$scope.dobList = passengers.getChildren();
+		}	
+		
+		$scope.$on('children:changed', function(event, args) {
+			$scope.dobList = passengers.getChildren();
+		});
+
+	}]);	
+	app.service('passengers', function () {
+	
+		var children;
+		
+		this.setChildren = function(birthdays){
+			console.log('chidlren set');
+			this.children = birthdays;
+		};
+		
+		this.getChildren = function() {
+			return this.children;
+		}
+	});
+</script>
+
+<div ng-controller="roomTypesController" data-ng-init="init()">
+	<h2>Date of birth list</h2>
+	<div >	
+		<table>
+			<tr ng-repeat="dob in dobList">
+				<td>{{ dob.DateOfBirthDay }} </td>
+				<td>{{ dob.DateOfBirthMonth }} </td>
+				<td>{{ dob.DateOfBirthYear }} </td>
+			</tr>
+		</table>
+	</div>
+
+	<div ng-controller="childrenController">
+		<h1>KIDS IN THIS ROOM</h1>
+		<hr></hr>
+		<p>
+			Please enter the date of birth of all kids intended for this room. <br/>
+			All kids must be accompanied by an adult 21 years or older.
+		</p>
+		<form name="childrenForm" data-ng-submit="submitChildrenForm()">
+			
+			<div>
+				<div data-ng-repeat="request in dateOfBirthList">		
+				
+					<div data-ng-controller="birthdayController">
+						<div class="ui stackable grid12">
+							<div class="four wide column">
+								<div class="field">
+									<select data-ng-model="request.DateOfBirthDay" name="" data-ng-required="true">
+										<option value="">Day</option>
+										<option ng-repeat="item in Days" value="{{item}}">{{item}}</option>
+									</select>
+								</div>
+							</div>
+							<div class="four wide column">
+								<div class="field">
+									<select data-ng-model="request.DateOfBirthMonth" name="" data-ng-change="UpdateNumberOfDays()" >
+										<option value="">Month</option>
+										<option ng-repeat="item in Months" value="{{item}}">{{item}}</option>
+									</select>
+								</div>
+							</div>
+							<div class="four wide column">
+								<div class="field">
+									<select data-ng-model="request.DateOfBirthYear" name="" data-ng-change="UpdateNumberOfDays()" >
+										<option value="">Year</option>
+										<option ng-repeat="item in Years" value="{{item}}">{{item}}</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						
+					</div>				
+					<a href="#" data-ng-click="addDateOfBirth(1, 1, 2000)">+</a><a href="#" data-ng-click="removeDateOfBirth(request)">-</a>
+				</div>
+			</div>
+			<div>
+				<h2>KIDS LIMIT STATUS</h2>
+				<p>
+					For the safety and enjoyment of all, there are limits on the number of kids <br/>
+					onboard. Below is the current capacity status of each age group.
+				</p>
+				<table>
+					  <tr ng-repeat="x in statuses">
+						<td>{{ x.ChildCategory }}</td>
+						<td>{{ x.Status }}</td>
+					  </tr>
+				</table>
+			</div>
+			
+			<div>
+				Due to safety issues we do not allow any baby under the age of 1 year old at the time of <br/>
+				sailing. For this cruise, this means any baby born on or before (DD/MM/YY).<br/>
+				Inappropriately adding guests, could result in your booking being cancelled.
+			</div>
+			
+			<a href="#" data-ng-click="cancel()">CANCEL</a>		
+			
+			<button type="submit">
+				CONTINUE
+			</button>
+		</form>
+	</div>
+</div>
+</body>
+</html>

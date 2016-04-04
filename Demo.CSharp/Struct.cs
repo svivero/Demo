@@ -1,7 +1,8 @@
 ﻿/*
-    ✓ CONSIDER defining a struct instead of a class if instances of the type are small and commonly short-lived or are commonly embedded in other objects.
+    ✓ CONSIDER defining a struct instead of a class if instances of the type are small and 
+    commonly short-lived or are commonly embedded in other objects.
 
-    X AVOID defining a struct unless the type has all of the following characteristics:
+    X AVOID defining a struct UNLESS the type has all of the following characteristics:
     It logically represents a single value, similar to primitive types (int, double, etc.).
     It has an instance size under 16 bytes.
     It is immutable.

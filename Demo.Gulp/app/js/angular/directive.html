@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example60-production</title>
+  
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  
+</head>
+<body ng-app="app">
+  <script>
+  angular.module('app', [])
+    .directive('cart', function() {
+      return {
+        restrict: 'EA', // restrict declaration by Element or Attribute
+        replace: false, // replace directive innerHtml
+        transclude: true, // use directive innerHtml where transclude placeholder is
+        template: '<h1>{{name}}<h1><div data-ng-transclude></div>',
+        // compile: preLink 
+        //  - this is where you manipulate template DOM for ALL directive instances.
+        link: function(scope, elem, attrs) { // ie compile: postLink
+          // usually where you register listeners or $watch
+          // this is where you manipulate template DOM for an INDIVIDUAL directive instance.
+          elem.click(function(){
+            alert('click');
+          });
+        },
+        controller: function($scope) {
+          // usually where you manage scope
+          $scope.name='steve';
+        }
+      } 
+    });
+</script>
+<div data-cart>
+  <p>Lorem ipsum</p>
+</div>
+</body>
+</html>

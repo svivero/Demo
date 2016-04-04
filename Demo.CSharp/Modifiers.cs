@@ -14,6 +14,19 @@ namespace Demo.CSharp
         }
     }
 
+    // default is internal
+    interface Interface
+    {
+        // must be implemented as public
+        void DefaultPublic();
+
+        void DefaultSealed();
+
+        void ExplicitlyImplemented();
+
+        int Count { get; }
+    }
+
     class DerivedClass : Class, Interface
     {
         public int Count => 1;
@@ -62,25 +75,7 @@ namespace Demo.CSharp
         // override DefaultSealed()
     }
 
-
-    // default is internal
-    interface Interface
-    {
-        // must be implemented as public
-        void DefaultPublic();
-
-        void DefaultSealed();
-
-        void ExplicitlyImplemented();
-
-        int Count { get; }
-    }
-
     abstract class Abstract
     {
-
     }
-
-
-
 }

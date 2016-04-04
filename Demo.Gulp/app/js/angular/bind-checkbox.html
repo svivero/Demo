@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example60-production</title>
+  
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  
+</head>
+<body ng-app="bindExample">
+  <script>
+  angular.module('bindExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.name = 'Whirled';
+	  
+  $scope.checkBoxItems = [{'Text':'apple', 'Value':0}, {'Text':'orange', 'Value':1}];
+
+  $scope.selection = [1];
+
+  $scope.toggleSelection = function toggleSelection(itemValue) {
+    var idx = $scope.selection.indexOf(itemValue);
+	console.log('idx is: '+idx);
+    // is currently selected
+    if (idx > -1) {
+      $scope.selection.splice(idx, 1);
+    }
+
+    // is newly selected
+    else {
+      $scope.selection.push(itemValue);
+    }
+  };
+    }]);
+</script>
+<div ng-controller="ExampleController">
+  Enter name: <input type="text" ng-model="name"><br>
+  ng-bind: <span ng-bind="name"></span>!<br>
+  ng-model: <span ng-model="name"></span>! <-- Dosn't work<br>
+	<label ng-repeat="item in checkBoxItems">
+	  <input
+		type="checkbox"
+		name="selectedItems[]"
+		value="{{item.Value}}"
+		ng-checked="selection.indexOf(item.Value) > -1"
+		ng-click="toggleSelection(item.Value)"
+	  > {{item.Text}}
+	</label>
+</div>
+</body>
+</html>

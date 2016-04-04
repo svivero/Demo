@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example60-production</title>
+  
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  
+</head>
+<body ng-app="app">
+  <script>
+  angular.module('app', [])
+    .controller('formController', function($scope) {
+      $scope.phonePattern = '\\d+';
+      $scope.submit = function() {
+console.log('form directive: ' + JSON.stringify($scope.form))        
+        $scope.results = JSON.stringify($scope.model);
+      }
+    });
+</script>
+  <div>
+    <!-- Setting 'name' will use angular's default form directive, see console -->
+    <form name="form" ng-controller="formController" ng-submit="submit()" novalidate>
+      <div>
+        <label>Name</label>
+        <input type="text" name="name" ng-model="model.name" required></input>
+        <span ng-show="form.$submitted && form.name.$error.required">Name required</span>
+      </div>
+      <div>
+        <label>Phone</label>
+        <input type="text" name="phone" ng-model="model.phone" ng-pattern="phonePattern" required></input>
+        <span ng-show="form.$submitted && !form.phone.$valid">Invalid phone</span>
+      </div>               
+      <div ng-show="form.$valid">
+        {{ results }}
+      </div>      
+      <button type="submit">Submit</button>
+    </form>
+
+  </div>
+</body>
+</html>

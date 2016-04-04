@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Demo.CSharp
 {
+    /*
+        Also,
+        ref tells the compiler that the object is initialized before entering the function, 
+        while out tells the compiler that the object will be initialized inside the function.
+    */
     [TestClass]
     public class Parameters
     {

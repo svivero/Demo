@@ -67,7 +67,7 @@
 
             Hider hider = new Hider();
             BaseClass b2 = hider;
-            int returns1 = hider.BaseMethod(); // Calls BaseClass.BaseMethod() instead of Hider.BaseMethod()
+            int returns1 = b2.BaseMethod(); // Calls BaseClass.BaseMethod() instead of Hider.BaseMethod()
         }
 
         public class SealedOverrider : BaseClass

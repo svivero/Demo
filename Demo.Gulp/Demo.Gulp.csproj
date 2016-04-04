@@ -70,7 +70,17 @@
   <ItemGroup>
     <Content Include="app\css\styles.css" />
     <Content Include="app\Icon-Placeholder.png" />
+    <Content Include="app\js\angular\bind-checkbox.html" />
+    <Content Include="app\js\angular\bind.html" />
+    <Content Include="app\js\angular\directive.html" />
+    <Content Include="app\js\angular\form.html" />
+    <Content Include="app\js\angular\ng-repeat.html" />
+    <Content Include="app\js\angular\ng-template.html" />
+    <Content Include="app\js\angular\ngCart.html" />
+    <Content Include="app\js\angular\validation.html" />
+    <Content Include="app\js\dates.html" />
     <Content Include="app\positioning.html" />
+    <Content Include="app\styleguide.html" />
     <Content Include="packages.config" />
     <Content Include="node_modules\.bin\dateformat" />
     <Content Include="node_modules\.bin\dateformat.cmd" />
