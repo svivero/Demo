@@ -36,13 +36,13 @@ namespace Demo.CSharp
     {
         public static object StaticExpression { get { return new object(); } }
 
-        public object NoneStaticField = new object();
+        public object NonStaticField = new object();
 
         // Can pass expressions
         public ExpressionParam() : this (ExpressionParam.StaticExpression) { }
 
         // Can't pass a field because instance has not been created yet, compile time error
-        // public ExpressionParam() : this(NonStatic) { }
+        //public ExpressionParam() : this(NonStaticField) { }
 
         public ExpressionParam(object param1) { }
     }

@@ -9,7 +9,8 @@ using Demo.CSharp.Models;
 namespace Demo.CSharp
 {
     /*
-        Whereas inheritance expresses reusability with a base type, generics express reusability with a “template” that contains “placeholder” types. 
+        Whereas inheritance expresses reusability with a base type, generics express reusability
+        with a “template” that contains “placeholder” types. 
         Generics, when compared to inheritance, can increase type safety and reduce casting and boxing.
     */
 
@@ -37,7 +38,7 @@ namespace Demo.CSharp
             Wash(a);
 
             // error because co-variance is not automatic
-            //Wash(bears);  
+            // Wash(bears);  
 
             WashWithAnimalContraint<Bear>(bears);
         }

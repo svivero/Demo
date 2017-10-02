@@ -8,14 +8,15 @@ namespace Demo.CSharp
         // default is private
         int y;
 
-        protected void ProtectedMethod()
-        {
-
-        }
+        protected void ProtectedMethod() {}
     }
 
+    // prevent inheritance
+    sealed class SealedClass {}
+
     // default is internal
-    interface Interface
+    interface Interface2 { }
+    interface Interface : Interface2 // can inherit from other interfaces
     {
         // must be implemented as public
         void DefaultPublic();
@@ -45,10 +46,9 @@ namespace Demo.CSharp
         // 'public' not required
         // 'virtual' not possible
         // 'sealed' not possible
-        void Interface.ExplicitlyImplemented()
-        {
-
-        }
+        // use explicit interface implementation if you are inheriting from multiple interfaces
+        // with the same method e.g. Interface1.Go, Interface2.Go
+        void Interface.ExplicitlyImplemented() {}
 
         private void CallProtectedFromDerived()
         {

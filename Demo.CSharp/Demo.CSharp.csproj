@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoxingAndUnboxing.cs" />
     <Compile Include="Constructors.cs" />
     <Compile Include="Covariance.cs" />
     <Compile Include="Enum.cs" />
