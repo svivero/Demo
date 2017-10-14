@@ -1,0 +1,30 @@
+<style>
+.static-box {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.static-blueBox {
+    background: #627da0;
+    position: static;
+    top: 100px;
+    z-index: -1;    
+}
+
+.static-greenBox {
+    background: #5b8054;
+    position: relative;
+    top: -75px;
+}
+
+.static-container {
+    /*background: rgba(0,0,0,5);
+    width: 200px;
+    height: 200px;*/
+}
+</style>
+<div class="static-container">
+    <div class="static-box static-blueBox"></div>
+</div>
+<div class="static-box static-greenBox"></div>
