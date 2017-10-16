@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Positioning</title>
+        <link href="styles/main.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <style>
+    .static-box {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .static-blueBox {
+        background: #627da0;
+
+        /*
+        blueBox does not move 100px because top is ignored when position is static.
+        */
+        position: static;
+        top: 100px;
+
+        /*
+        Note: greenbox ix now behind blue box.
+        Z-index controls the vertical stacking order of elements. Elements must have a set positioning for z-index to work.
+        */
+        z-index: -1;
+    }
+
+    .static-greenBox {
+        background: #5b8054;
+        position: relative;
+        top: -75px;
+    }
+
+    .static-container {
+        /*background: rgba(0,0,0,5);
+        width: 200px;
+        height: 200px;*/
+    }
+    </style>
+    <div class="static-container">
+        <div class="static-box static-blueBox"></div>
+    </div>
+    <div class="static-box static-greenBox"></div>
+
+        <h1>Understanding CSS Positioning</h1>
+        <p><em>Static positioning</em> is the default behavior of elements.  <em>Inherited positioning</em> tells an element to inherit its positioning from its parent element.  <em>Z-index</em> controls the vertical stacking order of elements.  Elements must have a set positioning for z-index to work.</p>
+    </body>
+
+</html>

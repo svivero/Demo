@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Positioning</title>
+        <link href="styles/main.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <style>
+    .center-box {
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .center-blueBox {
+        background: #627da0;
+        margin: 0 auto;
+    }
+    .center-greenBox {
+        background: #5b8054;
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+    }
+    .center-greenBox {
+        background: #5b8054;
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+    }
+    .center-blackBox {
+        background: #000000;
+        margin: 0 auto;
+    }
+    .center-container{
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+    .center-body {
+      position: relative;
+      background: #D3D3D3;
+      height: 200px;
+    }
+    </style>
+    <div class="center-body">
+      <div class="center-box center-blueBox"></div>
+      <div class="center-box center-greenBox"></div>
+      <div class="center-container">
+        <div class="center-box center-blackBox"></div>
+      </div>
+    </div>
+
+        <h1>Understanding CSS Positioning</h1>
+        <p>One of the most commonly asked questions is how to <em>center elements</em> since there is no option to float center.  But by  thinking carefully about how elements  behave, we can use positioning to achieve the same result.</p>
+    </body>
+
+</html>

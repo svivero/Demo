@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Positioning</title>
+        <link href="styles/main.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <style>
+    .absolute-box {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .absolute-greenBox {
+        background: #5b8054;
+    }
+
+    .absolute-blueBox {
+        background: #627da0;
+
+        /* Move 20px relative to container,
+           only if container has set position.
+
+           Unlike fixed position, it will not move with scroll bar.
+        */
+        position: absolute;
+        left: 20px;
+    }
+
+    .absolute-container {
+        background: #000000;
+        height: 110px;
+        width: 110px;
+        position: absolute;
+        left: 50px;
+    }
+    </style>
+
+    <div class="absolute-container">
+        <div class="absolute-box absolute-blueBox"></div>
+    </div>
+    <div class="absolute-box absolute-greenBox"></div>
+
+
+        <h1>Understanding CSS Positioning</h1>
+        <p><em>Absolute positioning</em> takes an element out of document flow, meaning the browser acts as if the element has no width and height, and the other elements on the page move up as if it was never there.  The position of the element is then fixed relative to the top level container, or the closest parent with a set positioning.</p>
+    </body>
+
+</html>

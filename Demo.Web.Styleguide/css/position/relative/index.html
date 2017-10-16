@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSS Positioning</title>
+        <link href="styles/main.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <style>
+    .relative-box {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .relative-blueBox {
+        background: #627da0;
+        position: relative;
+        top: 50px;
+    }
+    .relative-greenBox {
+        background: #5b8054;
+    }
+    .relative-container {
+        background: #000000;
+    }
+    </style>
+
+    <div class="relative-container">
+        <div class="relative-box relative-blueBox"></div>
+    </div>
+    <div class="relative-box relative-greenBox"></div>
+
+
+        <h1>Understanding CSS Positioning</h1>
+        <p><em>Relative positioning</em> sets the position of an element relative to its original position.  The element's original width and height is retained in document flow and other elements behave as if it was in its original position.</p>
+        Note:
+        <ul>
+
+          <li>
+            The blue box moved 50px from the top of its ***original position*** ie of its container, instead of the body - like fixed would.
+          </li>
+          <li>
+            The green box **does not** ignore its width and height - like fixed would.
+          </li>
+        </ul>
+    </body>
+
+</html>
