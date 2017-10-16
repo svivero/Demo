@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+          body{background-color:#1f1f1f;height:2000px;color:#bfbfbf}h1{font-weight:400}em{color:#dd740b}
+        </style>
+        <link rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <h1>
+          Rules
+        </h1>
+        <section>
+          <h2>Parent selector (&)</h2>
+          <pre>
+            <code class="html">
+              a {
+                text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+              // Results in
+              a { text-decoration: none; }
+              a:hover { text-decoration: underline; }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Nested properties</h2>
+          <pre>
+            <code class="html">
+              font: {
+                family: Verdana, Helvetica, sans-serif;
+                size: 14px;
+              }
+              // Results in
+              font-family: Verdana, Helvetica, sans-serif;
+              font-size: 14px;
+            </code>
+          </pre>
+        </section>
+    </body>
+</html>

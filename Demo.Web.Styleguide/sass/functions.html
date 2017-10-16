@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+          body{background-color:#1f1f1f;height:2000px;color:#bfbfbf}h1{font-weight:400}em{color:#dd740b}
+        </style>
+        <link rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <h1>
+          Functions
+        </h1>
+        <section>
+          <h2>General</h2>
+          <pre>
+            <code class="html">
+              $value: if(true, $color1, $color2);
+              $rnd: round(3.14);
+              $top: ceil(3.14);
+              $bot: floor(3.14);
+              $per: percentage(.14);
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h2>Color</h2>
+          <pre>
+            <code class="html">
+              color: lighten($color, 10%);
+              color: darken($color, 10%);
+
+              color: saturate($color, 10%);
+              color: desaturate($color, 10%);
+
+              color: fade_in($color, .1);
+              color: fade_out($color, .1);
+
+              color: invert($color);
+              color: complement($color);
+            </code>
+          </pre>
+        </section>
+    </body>
+
+</html>
