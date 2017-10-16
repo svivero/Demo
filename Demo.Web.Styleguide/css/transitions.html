@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+          body{background-color:#1f1f1f;height:2000px;color:#bfbfbf}h1{font-weight:400}em{color:#dd740b}
+        </style>
+        <link rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <h1>
+          Transition Basics
+        </h1>
+        <p>
+          transition: property duration timing-function delay
+        </p>
+
+        <section>
+          <h2>
+            Transition one property
+          </h2>
+          <p>
+            Only 'color' will transition, all other properties are ignored
+          </p>
+          <p>
+            Anything that has an intermediate value (ie has :halfway)
+            can be transitioned
+          </p>
+          <pre>
+            <code class="html">
+              // e.g.
+              a {
+                transition: color 2s ease-in 50ms;
+              }
+            </code>
+          </pre>
+          <style>
+            .one-property {
+              color: red;
+              transition: color 2s ease-in 50ms;
+            }
+            .one-property:hover {
+              font-size: 120%;
+              background-color: rgba(255,255,255,0.7);
+              color: yellow;
+            }
+          </style>
+          <div>
+            <a href="#" class="one-property">Hover over me</a>
+          </div>
+        </section>
+
+        <section>
+          <h2>
+            Transition all properties
+          </h2>
+          <p>
+          </p>
+          <pre>
+            <code class="html">
+              transition: all 2s ease-in 50ms;
+            </code>
+          </pre>
+          <style>
+            .multiple-properties {
+              color: black;
+              font-size: 85%;
+              background-color: rgba(255,255,255,0.9);
+              transition: all 2s ease-in 50ms;
+            }
+            .multiple-properties:hover {
+              color: red;
+              font-size: 120%;
+              background-color: rgba(255,255,255,0.7);
+            }
+          </style>
+          <div>
+            <a href="#" class="multiple-properties">Hover over me</a>
+          </div>
+        </section>
+
+        <section>
+          <h2>
+            Transition transforms
+          </h2>
+          <p>
+            Hover over image to start
+          </p>
+          <pre>
+            <code class="html">
+              transition: all 3s ease-in 50ms;
+               then on hover,
+              transform: rotate(360deg) scale(2);
+            </code>
+          </pre>
+          <style>
+            .transform {
+              transition: all 3s ease-in 50ms;
+              transform-origin: 0 0;
+
+              width: 50px;
+              height: 50px;
+              margin-left: 50px;
+            }
+            .transform:hover {
+              transform: rotate(360deg) scale(2);
+            }
+          </style>
+          <div>
+            <img src="_assets/test.jpg" class="transform" />
+          </div>
+        </section>
+    </body>
+</html>
