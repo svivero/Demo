@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <section>
+          <h1>BEM</h1>
+          <p>NOTE: Dosn't use descendent selectors.</p>
+          <pre>
+            <code class="html">
+              ul> class="menu" // block
+                li> class="menu__item" // element
+                li> class="menu__item menu--hidden" // with element modifier
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h2>BEM - Block</h2>
+          <p>
+            A logically and functionally <b>independent page component</b>.
+          </p>
+          <p>
+            Blocks being independent allows for their <b>re-use</b>.
+          </p>
+          <p>
+            Can be nested with other blocks.
+          </p>
+          <h3>Block Naming Convention</h3>
+          <p>
+            Use only classes, lowercase letters and one hyphen separate words.
+          </p>
+          <pre>
+            <code class="html">
+              .block-name
+              .menu
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>BEM - Element</h2>
+          <p>
+            A element is part of a block. It is a <b>child element</b> of the block
+            and cannot be used on its own. E.g. the tabs below cannot be used outside
+            their Block.
+          </p>
+          <img src="square-tabs.png"/>
+          <h3>Element Naming Convention</h3>
+          <p>
+            Delimited by a double underscore.
+          </p>
+          <pre>
+            <code class="html">
+              .block-name__elem-name
+              .menu__item
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>BEM - Modifier</h2>
+          <p>
+            Defines the appearance and behavior of a block or element.
+          </p>
+          <p>
+            Modifiers can be used to change the block's <b>theme</b> or <b>style</b>
+            the component without modifying other unrelated modules.
+          </p>
+          <h3>Modifier Naming Convention</h3>
+          <p>
+            Modifiers should identify which block it belongs to, followed by a modifier name,
+            separated by a single underscore.
+          </p>
+          <p>
+            Or use the alternative naming scheme, two hyphens instead of an underscore.
+          </p>
+          <pre>
+            <code class="html">
+              .block-name__elem-name_mod-name
+              .block-name__elem-name--mod-name (alternative)
+              .menu__item_hidden
+              .menu__item--hidden (alternative)
+            </code>
+          </pre>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
