@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+          h1{font-weight:400}em{color:#dd740b}
+        </style>
+        <link rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+    </head>
+    <body>
+        <h1>
+          Display
+        </h1>
+        <section>
+          <h2>
+            Block vs. Inline vs. Inline-Block
+          </h2>
+          <pre>
+            <code class="html">
+              .block, .inline, .inline-block {
+                padding: 20px;
+                margin: 20px;    // ignored by inline
+                width: 100px;    // ignored by inline, inline-block
+                height: 50px;    // ignored by inline, inline-block
+              }
+            </code>
+          </pre>
+          <style>
+            .block, .inline, .inline-block {
+              padding: 20px;
+              margin: 20px;
+              width: 100px;
+              height: 50px;
+            }
+
+            .block {
+              background: lightgreen;
+            }
+
+            .inline {
+              background: lightblue;
+            }
+
+            .inline-block {
+              background: pink;
+            }
+          </style>
+          <div class="block">block</div>
+          <div class="block">block</div>
+          <span class="inline">inline</span>
+          <span class="inline">inline</span>
+          <span class="inline-block">inline-block</span>
+          <span class="inline-block">inline-block</span>
+        </section>
+    </body>
+</html>

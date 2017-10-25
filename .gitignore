@@ -210,3 +210,5 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/Demo.Web.Styleguide/dist/bundle.js
+/Demo.Web.Styleguide/dist/main.bundle.css
