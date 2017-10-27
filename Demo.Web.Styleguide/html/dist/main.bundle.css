@@ -1,0 +1,58 @@
+html {
+  /*
+  Changes the browser default size to be equivalent to 10px (from default 16px).
+  This is better than using sass to calculate.
+  */
+  font-size: 62.5%; }
+
+/*
+rem is relative to root ie 62.5%=10px. Therefore, value of 1.8rem=18px.
+*/
+body {
+  font-family: "Open Sans",sans-serif;
+  font-size: 1.8rem; }
+
+html {
+  /*
+  Changes the browser default size to be equivalent to 10px (from default 16px).
+  This is better than using sass to calculate.
+  */
+  font-size: 62.5%; }
+
+/*
+rem is relative to root ie 62.5%=10px. Therefore, value of 1.8rem=18px.
+*/
+body {
+  font-family: "Open Sans",sans-serif;
+  font-size: 1.8rem; }
+
+button, input[type=submit] {
+  border: none;
+  text-decoration: none; }
+
+.btn {
+  font-size: 1.8rem;
+  background-color: grey;
+  color: white;
+  border-radius: 4px;
+  padding: 6px 30px;
+  line-height: 1;
+  vertical-align: top; }
+  .btn-primary {
+    background: blue; }
+  .btn-secondary {
+    background: green; }
+
+a {
+  display: inline-block;
+  text-decoration: none; }
+
+/*
+This is just a demo for mixin, you should avoid using mixins for resets
+because it repeats the css. You should use a helper css class e.g. .list-reset
+*/
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: black; }
