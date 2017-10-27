@@ -1,0 +1,5 @@
+// position vertically centered
+@mixin v-centered {
+  position: absolute;
+  top: 50%;
+}
