@@ -4,9 +4,13 @@ module.exports = {
   entry: [
    './src/main.js',
    './src/styles.scss'],
+
   output: {
-    filename: 'dist/bundle.js'
+    filename: 'src/dist/bundle.js'
   },
+
+  watch: true,
+
   module: {
 
     rules: [
@@ -30,7 +34,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({ // define where to save the file
-      filename: 'dist/[name].bundle.css',
+      filename: 'src/dist/[name].bundle.css',
       allChunks: true,
     }),
   ],
