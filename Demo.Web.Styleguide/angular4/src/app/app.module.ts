@@ -1,11 +1,11 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent }  from './app.component';
+import { SgHeaderComponent }  from './styleguide/header/sg-header.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ SgHeaderComponent ],
+  bootstrap:    [ SgHeaderComponent ]
 })
 export class AppModule { }
