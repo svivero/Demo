@@ -1,0 +1,14 @@
+/*
+This is just a demo for mixin, you should avoid using mixins for resets
+because it repeats the css. You should use a helper css class e.g. .list-reset
+*/
+@mixin list-reset($color:black) {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: $color;
+}
+
+ul {
+  @include list-reset;
+}

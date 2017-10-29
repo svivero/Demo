@@ -1,0 +1,23 @@
+@import './../../global/typography/typography';
+@import './../../global/colors/colors';
+
+button, input[type=submit] {
+  border: none;
+  text-decoration: none;
+}
+
+.btn {
+  font-size: $font-size-base;
+  background-color: $grey;
+  color: $white;
+  border-radius: 4px;
+  padding: 6px 30px;
+  line-height: 1;
+  vertical-align: top;
+  &-primary {
+    background: $blue;
+  }
+  &-secondary {
+    background: $green;
+  }
+}
