@@ -2,4 +2,5 @@
 @mixin v-centered {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
 }
