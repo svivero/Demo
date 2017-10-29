@@ -1,0 +1,29 @@
+@import './global/helpers.scss';
+
+@import './components/elements/buttons/buttons.scss';
+@import './components/elements/links/links.scss';
+@import './components/elements/lists/lists.scss';
+
+html {
+  /*
+  Changes the browser default size to be equivalent to 10px (from default 16px).
+  This is better than using sass to calculate.
+  */
+  font-size: 62.5%;
+}
+
+/*
+rem is relative to root ie 62.5%=10px. Therefore, value of 1.8rem=18px.
+*/
+$font-size-base: 1.8rem;
+body {
+  font-family: "Open Sans",sans-serif;
+  font-size: $font-size-base;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
