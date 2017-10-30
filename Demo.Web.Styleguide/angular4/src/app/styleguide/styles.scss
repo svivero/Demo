@@ -20,8 +20,17 @@ main {
 }
 
 h1 {
-  font-size: 60px;
 }
 
 p {
+}
+
+.page-head {
+  &__text {
+    font-size: 60px;
+    margin-bottom: 0;
+  }
+  &__desc {
+    margin-bottom: 80px;
+  }
 }
