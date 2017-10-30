@@ -9,10 +9,11 @@ import { BrowserModule } from '@angular/platform-browser';
 //
 import { SgHeaderComponent }  from './styleguide/components/header/sg-header.component';
 import { SgButtonsComponent }  from './styleguide/components/elements/sg-buttons.component';
+import { HomeComponent } from './styleguide/components/home/sg-home.component';
 import { AppComponent } from './styleguide/components/app.component';
 
 export const ROUTES: Routes = [
-  { path: '', pathMatch: 'full', component: AppComponent },
+  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'elements/buttons', component: SgButtonsComponent }
 ];
 
@@ -30,6 +31,7 @@ export const ROUTES: Routes = [
   declarations: [
     SgHeaderComponent,
     SgButtonsComponent,
+    HomeComponent,
     AppComponent
   ],
 

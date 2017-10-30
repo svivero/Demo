@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './sg-header.component.html',
 })
 export class SgHeaderComponent  {
-  title = 'My';
+  title = 'SVIVERO';
 }
