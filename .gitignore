@@ -212,3 +212,6 @@ _Pvt_Extensions/
 ModelManifest.xml
 /Demo.Web.Styleguide/dist/bundle.js
 /Demo.Web.Styleguide/dist/main.bundle.css
+/Demo.Web.Styleguide/angular4/dist/bundle.js
+/Demo.Web.Styleguide/angular4/dist/main.bundle.css
+/Demo.Web.Styleguide/angular4/src/dist
